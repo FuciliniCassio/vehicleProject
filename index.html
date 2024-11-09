@@ -4,73 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vehicle Selection</title>
-  </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color: chocolate;
-    }
-  
-    .container {
-      height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    button{
-      background-color: chartreuse;
-    }
-  
-    /* Estilos específicos para dispositivos móveis */
-    @media (max-width: 600px) {
+      body {
+        background-color: chocolate;
+      }
+
       .container {
-        padding: 10px;
-      }
-  
-      form {
-        width: 100%;
-        max-width: 400px;
-      }
-  
-      label,
-      input[type="submit"] {
-        margin-top: 20px;
-      }
-  
-      .vehicle-options {
+        height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         display: flex;
-        flex-direction: column; /* Empilha as imagens */
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        margin-top: 20px;
       }
-  
-      .vehicle {
-        width: 60px;
-        height: 60px;
-        margin: 10px 0; /* Espaçamento vertical entre as imagens */
+
+      button {
+        background-color: chartreuse;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1em;
         cursor: pointer;
       }
-  
-      .result {
-        font-size: 1em;
-        text-align: center;
+
+      .vehicle-options {
+        display: flex;
+        justify-content: space-around;
         margin-top: 20px;
+        gap: 10px;
       }
-    }
-  </style>
-  
+
+      .vehicle {
+        width: 150px;
+        height: auto;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: transform 0.2s;
+      }
+
+      .vehicle.selected {
+        border-color: blue;
+        transform: scale(1.05);
+      }
+
+      .result {
+        font-size: 1.2em;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      /* Estilos específicos para dispositivos móveis */
+      @media (max-width: 600px) {
+        .container {
+          padding: 10px;
+        }
+
+        .vehicle-options {
+          flex-direction: column; /* Empilha as imagens */
+          align-items: center;
+        }
+
+        .vehicle {
+          width: 80%; /* Ajusta a largura das imagens para caber na tela */
+          max-width: 300px;
+          margin-bottom: 15px; /* Espaçamento entre as imagens */
+        }
+
+        button {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    </style>
+  </head>
   <body>
     <div class="container">
       <h1>Com qual Veículo vamos Hoje?</h1>
       <div class="vehicle-options">
-        <img src="car1.jpg" class="vehicle" data-vehicle="car1" width="300" height="400" alt="Veículo 1" />
-        <img src="car2.jpg" class="vehicle" data-vehicle="car2" width="300" height="400" alt="Veículo 2" />
-        <img src="car3.jpg" class="vehicle" data-vehicle="car3" width="300" height="400" alt="Veículo 3" />
+        <img src="car1.jpg" class="vehicle" data-vehicle="car1" alt="Veículo 1" />
+        <img src="car2.jpg" class="vehicle" data-vehicle="car2" alt="Veículo 2" />
+        <img src="car3.jpg" class="vehicle" data-vehicle="car3" alt="Veículo 3" />
       </div>
       <button class="submit-btn">Enviar</button>
       <div class="result">Faça sua escolha!</div>
