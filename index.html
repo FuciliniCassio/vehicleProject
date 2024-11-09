@@ -7,6 +7,73 @@
   </head>
   <style>
     /* Estilos existentes */
+    <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px; /* Limite de largura para telas maiores */
+  }
+
+  label,
+  input[type="submit"] {
+    margin-top: 20px;
+  }
+
+  .vehicle-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .vehicle {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  .result {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+
+  /* Estilos específicos para telas menores */
+  @media (max-width: 600px) {
+    .container {
+      padding: 5px;
+    }
+
+    .vehicle {
+      width: 60px;
+      height: 60px;
+    }
+
+    .result {
+      font-size: 1em;
+      text-align: center;
+    }
+  }
+</style>
+
     * {
       margin: 0;
       padding: 0;
