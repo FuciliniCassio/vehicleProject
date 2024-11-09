@@ -7,81 +7,42 @@
   </head>
   <style>
     /* Estilos existentes */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .container {
-    height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  label,
-  input[type="submit"] {
-    margin-top: 20px;
-  }
-
-  .vehicle-options {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-
-  .vehicle {
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
-    margin: 10px;
-  }
-
-  .result {
-    margin-top: 20px;
-    font-size: 1.2em;
-  }
-
-  /* Estilos para telas menores */
-  @media (max-width: 600px) {
-    .container {
-      padding: 5px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: chocolate;
     }
-
-    .vehicle-options {
+    .container {
+      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
     }
-
+    .vehicle-options {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
     .vehicle {
-      width: 60px;
-      height: 60px;
-      margin: 10px 0; /* Adiciona espaçamento vertical entre as imagens */
+      cursor: pointer;
+      border: 2px solid transparent;
     }
-
-    .result {
-      font-size: 1em;
-      text-align: center;
+    .vehicle.selected {
+      border-color: blue;
     }
-  }
-</style>
-
+    .submit-btn {
+      margin-top: 20px;
+    }
+    button {
+      background-color:darkred;
+    }
+  </style>
   <body>
     <div class="container">
-      <h1>Com qual Veículo vamos amanhã?</h1>
+      <h1>Com qual Veículo vamos Hoje?</h1>
       <div class="vehicle-options">
         <img src="car1.jpg" class="vehicle" data-vehicle="Stilo" width="300" height="400" alt="Veículo 1" />
         <img src="car2.jpg" class="vehicle" data-vehicle="Fox" width="300" height="400" alt="Veículo 2" />
