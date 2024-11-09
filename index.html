@@ -7,7 +7,6 @@
   </head>
   <style>
     /* Estilos existentes */
-    <style>
   * {
     margin: 0;
     padding: 0;
@@ -29,7 +28,7 @@
     flex-direction: column;
     margin-bottom: 20px;
     width: 100%;
-    max-width: 400px; /* Limite de largura para telas maiores */
+    max-width: 400px;
   }
 
   label,
@@ -56,15 +55,21 @@
     font-size: 1.2em;
   }
 
-  /* Estilos específicos para telas menores */
+  /* Estilos para telas menores */
   @media (max-width: 600px) {
     .container {
       padding: 5px;
     }
 
+    .vehicle-options {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .vehicle {
       width: 60px;
       height: 60px;
+      margin: 10px 0; /* Adiciona espaçamento vertical entre as imagens */
     }
 
     .result {
@@ -74,40 +79,6 @@
   }
 </style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color:chocolate;
-    }
-    .container {
-      height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .vehicle-options {
-      display: flex;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .vehicle {
-      cursor: pointer;
-      border: 2px solid transparent;
-    }
-    .vehicle.selected {
-      border-color: blue;
-    }
-    .submit-btn {
-      margin-top: 20px;
-      color: blue;
-    }
-    button{
-      color: blueviolet;
-    }
-  </style>
   <body>
     <div class="container">
       <h1>Com qual Veículo vamos amanhã?</h1>
