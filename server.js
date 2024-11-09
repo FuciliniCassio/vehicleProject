@@ -1,6 +1,5 @@
 const path = require("path");
 const express = require("express");
-const bodyParser = require("body-parser");
 const fs = require("fs");
 
 const app = express();
@@ -11,10 +10,16 @@ app.use(express.static("public"));
 
 const vehicleSelections = { car1: 0, car2: 0, car3: 0 };
 
-// Carrega o arquivo JSON se ele existir
+// Carrega o arquivo JSON se ele existir e não estiver vazio
 if (fs.existsSync("vehicleSelections.json")) {
-  const data = fs.readFileSync("vehicleSelections.json");
-  Object.assign(vehicleSelections, JSON.parse(data));
+  const data = fs.readFileSync("vehicleSelections.json", "utf-8");
+  if (data) {
+    try {
+      Object.assign(vehicleSelections, JSON.parse(data));
+    } catch (error) {
+      console.error("Erro ao parsear JSON:", error);
+    }
+  }
 }
 
 app.get("/", (req, res) => {
